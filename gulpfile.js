@@ -145,6 +145,9 @@ gulp.task('default', ['browserSync', 'less', 'rigger', 'watch']);
 // Сборка проекта
 gulp.task('build', ['cleanCSS', 'imagemin', 'fonts', 'js', 'html', 'php']);
 
+// Сборка проекта без картинок
+gulp.task('buildhtml', ['cleanCSS', 'fonts', 'js', 'html', 'php']);
+
 
 
 

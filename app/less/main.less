@@ -219,7 +219,6 @@ p {
 @color-yi: #D91748;
 @dark-text: #5a5a5a;
 @light-text: #ffffff;
-
 header {
     width: 100%;
     background: @light-text;
@@ -326,22 +325,26 @@ header {
         }
         li {
             display: block;
-            a {
+            .category {
                 font-size: 180%;
             }
         }
         .item {
             a {
-                padding: 0 5px;
-                display: inline-block;
-                font-size: 120%;
-                text-align: center;
+                padding: 0 5px; //display: inline-block;
+                display: block;
+                font-size: 130%; //text-align: center;
+                color: @dark-text;
+                &:hover,
+                &:focus {
+                    color: @color-yi;
+                }
             }
         }
     }
     .button {
         display: block; //float: right;
-        margin: 10px 0;
+        margin: 20px 0 10px;
         padding: 10px 15px;
         font-size: 180%;
         text-align: center;
@@ -383,8 +386,7 @@ header {
             font-family: "HelveticaNeueCyr-Light";
             font-size: 180%;
             color: #1a96d4;
-
-            &:hover{
+            &:hover {
                 text-decoration: none;
             }
         }
@@ -400,7 +402,6 @@ header {
 }
 
 .advantages {
-    
     .advantage {
         padding: 70px 10px 0;
         text-align: center;
@@ -415,20 +416,16 @@ header {
             font-size: 140%;
         }
     }
-    .item-1{
-        
-        background:#3498db;
+    .item-1 {
+        background: #3498db;
     }
-
-    .item-2{
-        background:#e67e22;
+    .item-2 {
+        background: #e67e22;
     }
-
-    .item-3{
+    .item-3 {
         background: #34495e;
     }
-
-    .item-4{
+    .item-4 {
         background: #e74c3c;
     }
 }
@@ -439,11 +436,9 @@ footer {
     img {
         margin-bottom: 20px;
     }
-
-    .social{
+    .social {
         margin-bottom: 30px;
     }
-
     .social-icon {
         display: inline-block;
         margin-right: 5px;
@@ -481,7 +476,6 @@ footer {
         }
     }
     nav {
-
         margin-bottom: 30px;
         h4 {
             color: @dark-text;
@@ -495,7 +489,9 @@ footer {
             color: @dark-text;
             font-size: 140%;
             margin-bottom: 7px;
-            &:hover, &:active, &:focus{
+            &:hover,
+            &:active,
+            &:focus {
                 color: @color-yi;
                 text-decoration: none;
             }
