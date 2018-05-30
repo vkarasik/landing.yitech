@@ -219,6 +219,7 @@ p {
 @color-yi: #D91748;
 @dark-text: #5a5a5a;
 @light-text: #ffffff;
+@blue-text: #2CA6E7;
 header {
     width: 100%;
     background: @light-text;
@@ -563,6 +564,59 @@ footer {
             max-width: 570px;
             height: 340px;
         }
+    }
+}
+
+.yi-action-{
+    &banner{
+        padding: 100px 0 70px;
+        background: #F4F4F4;
+        text-align: center;
+
+        h1{
+            color: @blue-text;
+        }
+    }
+
+    &video {
+        padding: 100px 0;
+        background: url("../img/hill-panorame.jpg") no-repeat center center;
+        background-size: cover;
+
+        h2,
+        p {
+            color: @light-text;
+        }
+        video {
+            width: 100%;
+            max-width: 570px;
+            height: 340px;
+        }
+    }
+
+    &angle{
+        padding: 70px 0;
+        background: #F7F8FA;
+        h2{
+            color:@blue-text;
+        }
+    }
+
+    &processor{
+        padding: 100px 0;
+        background: url("../img/yi-plane.jpg") no-repeat center center;
+
+        h2,p{
+            color: @light-text;
+        }
+    }
+
+    &companion{
+        padding: 70px 0;
+        img{
+            max-width: 25%;
+        }
+        
     }
 }
 
