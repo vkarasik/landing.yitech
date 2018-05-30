@@ -576,6 +576,10 @@ footer {
         h1{
             color: @blue-text;
         }
+
+        img{
+            max-width: 100%;
+        }
     }
 
     &video {
@@ -600,6 +604,10 @@ footer {
         h2{
             color:@blue-text;
         }
+
+        img{
+            max-width: 100%;
+        }
     }
 
     &processor{
@@ -609,14 +617,33 @@ footer {
         h2,p{
             color: @light-text;
         }
+
+        img{
+            max-width: 100%;
+        }
     }
 
     &companion{
         padding: 70px 0;
         img{
-            max-width: 25%;
+            max-width: 30%;
         }
         
+    }
+
+    &app{
+        padding: 100px 0 200px;
+        background: url("../img/yi-camera-app-bg.jpg") no-repeat center center;
+        background-size: cover;
+
+        h2,p{
+            color: #ffffff;
+        }
+
+        @media(max-width: 768px) {
+            background: url("../img/yi-camera-app-bg.jpg") no-repeat center left;
+        }
+
     }
 }
 
@@ -1167,6 +1194,38 @@ footer {
         img {
             max-width: 100%;
         }
+    }
+}
+
+.yi-stick-{
+    &banner{
+        padding: 120px 0 150px;
+        background: url('../img/yiselfiebanner.jpg') no-repeat center center;
+        background-size: cover;
+
+        h1{
+            color: @color-yi;
+        }
+    }
+
+    &info{
+        padding: 70px 0;
+    }
+}
+
+.yi-floatgrip-{
+    &banner{
+        padding: 70px 0;
+        background: url("../img/flatgripbanner.jpg") no-repeat center center;
+        background-size: cover;
+
+        h1,p{
+            color: @light-text;
+        }
+    }
+
+    &info{
+        padding: 70px 0;
     }
 }
 
