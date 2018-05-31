@@ -1197,9 +1197,39 @@ footer {
     }
 }
 
+.gallery{
+    .prew-img{
+        max-width: 70px;
+        margin: 10px 5px;
+        display: inline-block;
+        border: 1px solid #afafaf;
+        cursor: pointer;
+
+        &:hover{
+            border-width: 2px;
+        }
+    }
+
+    .large-img{
+        display: block;
+    }
+}
+
+.yi-mount-{
+    &banner{
+        padding: 200px 0;
+        background: url('../img/pet-mount-bg.jpg') no-repeat center center;
+        background-size: cover;
+
+        h1{
+            color: @color-yi;
+        }
+    }
+}
+
 .yi-stick-{
     &banner{
-        padding: 120px 0 150px;
+        padding: 120px 0 200px;
         background: url('../img/yiselfiebanner.jpg') no-repeat center center;
         background-size: cover;
 
@@ -1215,7 +1245,7 @@ footer {
 
 .yi-floatgrip-{
     &banner{
-        padding: 70px 0;
+        padding: 100px 0;
         background: url("../img/flatgripbanner.jpg") no-repeat center center;
         background-size: cover;
 

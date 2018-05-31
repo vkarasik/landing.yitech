@@ -121,6 +121,10 @@ $(function () {
         $(this).toggleClass('close');
     })
 
+    $('.prew-img').click(function(){
+        $(this).siblings('.large-img').attr('src', $(this).attr("src"));
+    })
+
     /*setInterval(function(){
         $(".slide:visible").fadeOut(400, function(){
             $(this).next(".slide").fadeIn(400);
