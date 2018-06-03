@@ -1221,8 +1221,63 @@ footer {
         background: url('../img/pet-mount-bg.jpg') no-repeat center center;
         background-size: cover;
 
-        h1{
+        @media(max-width: 768px){
+            padding: 150px 0;
+            background: url('../img/pet-mount-bg.jpg') no-repeat 45% center;    
+        }
+
+        h1,p{
             color: @color-yi;
+        }
+    }
+}
+
+.yi-handmount-{
+    &info{
+        padding: 70px 0;
+
+        img{
+            max-width: 100%;
+        }
+    }
+}
+
+.yi-bikemount-{
+    &banner{
+        padding: 100px 0;
+        background: url('../img/bile-mount-bg.jpg') no-repeat center center;
+        background-size: cover;
+
+        h2,p{
+            color: @light-text;
+        }
+    }
+    &info{
+        padding: 70px 0;
+        
+        img{
+            max-width: 100%;
+        }
+    }
+
+    
+}
+
+.yi-headmount-{
+    &banner{
+        padding: 100px 0;
+        background: url('../img/yi_helmet_mount_bg.jpg') no-repeat center center;
+        background-size: cover;
+
+        h2,p{
+            color: @light-text;
+        }
+    }
+    &info{
+        padding: 70px 0;
+
+        img{
+            max-width: 100%;
         }
     }
 }
@@ -1240,6 +1295,10 @@ footer {
 
     &info{
         padding: 70px 0;
+        
+        img{
+            max-width: 100%;
+        }
     }
 }
 
@@ -1249,13 +1308,17 @@ footer {
         background: url("../img/flatgripbanner.jpg") no-repeat center center;
         background-size: cover;
 
-        h1,p{
+        h2,p{
             color: @light-text;
         }
     }
 
     &info{
         padding: 70px 0;
+
+        img{
+            max-width: 100%;
+        }
     }
 }
 
