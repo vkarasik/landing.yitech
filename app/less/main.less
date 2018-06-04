@@ -268,6 +268,11 @@ header {
         color: @light-text;
         text-decoration: none;
         background: @color-yi;
+        border-radius: 3px;
+
+        &:hover{
+            background: @color-yi - 15%;
+        }
     }
     nav {
         padding: 10px 0;
@@ -308,10 +313,9 @@ header {
         display: block;
         width: 32px;
         height: 32px;
-        margin: 10px; //background: url("../img/menu-options.png") no-repeat center center;
+        margin: 10px;
         background: url("../img/menu.svg") no-repeat center center;
         &.close {
-            //background: url("../img/menu-close.png") no-repeat center center;
             background: url("../img/cancel.svg") no-repeat center center;
         }
     }
@@ -1212,6 +1216,20 @@ footer {
 
     .large-img{
         display: block;
+    }
+}
+
+.yi-shops-{
+    &banner{
+        padding: 120px 0;
+        background: url('../img/shops-bg.jpg') no-repeat center center;
+        background-size: cover;
+
+        h1,p{color: @light-text}
+    }
+
+    &shops{
+        padding: 70px 0;
     }
 }
 
