@@ -17,68 +17,69 @@ var notify = require('gulp-notify'); // уведомления
 
 var path = {
     dist: { //Директория для продакшена
-        html: 'dist/',
+        html: 'dist/includes/',
+        php: 'dist/',
         js: 'dist/js/',
         css: 'dist/css/',
         img: 'dist/img/',
         fonts: 'dist/fonts/'
     },
     app: { //Директория для разработки
-        html: 'app/template/*.html',
-        include: 'app/template/include/*.html',
+        php: 'app/**/*.php',
+        includes: 'app/includes/*.php',
+        includesHtml: 'app/includes/*.html',
         js: 'app/js/**/*.*',
         less: 'app/less/*.less',
         css: 'app/css/*.css',
         img: 'app/img/**/*.*',
         fonts: 'app/fonts/**/*.*',
-        php: 'app/*.php',
     },
     clean: 'dist'
 };
 
 // поднимаем сервер Browser Sync
-gulp.task('browserSync', function() {
-  browserSync({
-    server: {
-      baseDir: 'app'
-    },
-    
-    tunnel: false,
-    host: 'localhost',
-    port: 3000,
-    logPrefix: "karasik"  
-  })
+gulp.task('browserSync', function () {
+    browserSync.init({
+        proxy: 'yitechnology',
+        port: 3000
+    })
 });
 
 // компилируем less в css
 gulp.task('less', function () {
-  return gulp.src(path.app.less)
-	.pipe(sourcemaps.init()) // карта кода
-    .pipe(less())
-    .pipe(autoprefixer({browsers: ['> 1%', 'IE 7'], cascade: true}))
-	.pipe(sourcemaps.write()) // карта кода
-    .pipe(rename({ suffix: '.min'}))
-	.pipe(gulp.dest('app/css'))
-	.pipe(reload({stream: true})) //Перезагрузим сервер для обновлений
-    .pipe(notify({ message: 'Изменен <%= file.relative %>' }));
+    return gulp.src(path.app.less)
+        .pipe(sourcemaps.init()) // карта кода
+        .pipe(less())
+        .pipe(autoprefixer({ browsers: ['> 1%', 'IE 7'], cascade: true }))
+        .pipe(sourcemaps.write()) // карта кода
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(gulp.dest('app/css'))
+        .pipe(reload({ stream: true })) //Перезагрузим сервер для обновлений
+        .pipe(notify({ message: 'Изменен <%= file.relative %>' }));
 });
 
 // подключение блоков html
 gulp.task('rigger', function () {
-    gulp.src(path.app.html)
+    gulp.src(['app/templates/*.php', 'app/templates/[^include]*/*.php'])
         .pipe(rigger()) //Прогоним через rigger
-        .pipe(gulp.dest('app'))
-        .pipe(reload({stream: true})) //Перезагрузим сервер для обновлений
-		.pipe(notify({ message: 'Изменен <%= file.relative %>' }));
+        .pipe(gulp.dest('app/'))
+        .pipe(reload({ stream: true })) //Перезагрузим сервер для обновлений
+        .pipe(notify({ message: 'Изменен <%= file.relative %>' }));
+});
+
+gulp.task('reload',function(){
+    gulp.src(['app/*.php', 'app/includes/**/*.*'])
+        .pipe(reload({ stream: true })) //Перезагрузим сервер для обновлений
+        .pipe(notify({ message: 'Изменен <%= file.relative %>' }));
 });
 
 // минификация css
-gulp.task('cleanCSS', function() {
-  return gulp.src(path.app.css)
-    .pipe(cleanCSS({compatibility: 'ie8'}))
-    //.pipe(rename({ suffix: '.min'}))
-    .pipe(gulp.dest(path.dist.css))
-    .pipe(reload({stream: true}));
+gulp.task('cleanCSS', function () {
+    return gulp.src(path.app.css)
+        .pipe(cleanCSS({ compatibility: 'ie8' }))
+        //.pipe(rename({ suffix: '.min'}))
+        .pipe(gulp.dest(path.dist.css))
+        .pipe(reload({ stream: true }));
 });
 
 // Объедениение стилей в один
@@ -89,61 +90,72 @@ gulp.task('useref', function () {
 });
 
 // сжатие изображений
-gulp.task('imagemin', function() {
-  gulp.src(path.app.img)
-  .pipe(imagemin())
-  .pipe(gulp.dest(path.dist.img))
+gulp.task('imagemin', function () {
+    gulp.src(path.app.img)
+        .pipe(imagemin())
+        .pipe(gulp.dest(path.dist.img))
 });
 
 // копирование шрифтов
-gulp.task('fonts', function() {
+gulp.task('fonts', function () {
     gulp.src(path.app.fonts)
-    .pipe(gulp.dest(path.dist.fonts))
+        .pipe(gulp.dest(path.dist.fonts))
 });
 
 // копирование html
-gulp.task('html', function() {
-    gulp.src('app/*.html')
-    .pipe(gulp.dest(path.dist.html))
+gulp.task('html', function () {
+    gulp.src(path.app.includesHtml)
+        .pipe(gulp.dest(path.dist.html))
 });
 
 // копирование js
-gulp.task('js', function() {
+gulp.task('js', function () {
     gulp.src(path.app.js)
-    .pipe(gulp.dest(path.dist.js))
+        .pipe(gulp.dest(path.dist.js))
 });
 
 // копирование php
-gulp.task('php', function() {
+gulp.task('php', function () {
     gulp.src(path.app.php)
-    .pipe(gulp.dest(path.dist.html))
+        .pipe(gulp.dest(path.dist.php))
 });
 
 // минификация основного js
-gulp.task('jsmin', function() {
+gulp.task('jsmin', function () {
     gulp.src('app/js/script.js')
-    .pipe(uglify())
-    .pipe(gulp.dest(path.dist.js))
+        .pipe(uglify())
+        .pipe(gulp.dest(path.dist.js))
 });
 
 // очистка
-gulp.task('clean', function() {
-  del(path.clean);
+gulp.task('clean', function () {
+    del(path.clean);
 });
 
 // Отслеживание изменений
-gulp.task('watch', function(){
-    gulp.watch(path.app.less, ['less']); //следим за изменением less и запускаем компилятор
-    gulp.watch(path.app.html, ['rigger']);
-    gulp.watch(path.app.include, ['rigger']);
-    gulp.watch(path.app.js, ['rigger']); // следим за изменением js
+gulp.task('watch', function () {
+    gulp.watch(path.app.less, ['less']);
+    gulp.watch('app/less/**/*.less', ['less']);
+    gulp.watch(path.app.includes, ['reload']);
+    gulp.watch(path.app.php, ['reload']);
+    gulp.watch(path.app.includesHtml, ['reload']);    
+    gulp.watch(path.app.js, ['reload']);
 });
 
 // Дефолтный таск для разработки
-gulp.task('default', ['browserSync', 'less', 'rigger', 'watch']);
+gulp.task('default', ['browserSync', 'less', 'watch']);
 
 // Сборка проекта
 gulp.task('build', ['cleanCSS', 'imagemin', 'fonts', 'js', 'html', 'php']);
 
 // Сборка проекта без картинок
 gulp.task('buildhtml', ['cleanCSS', 'fonts', 'js', 'html', 'php']);
+
+
+
+
+
+
+
+
+
