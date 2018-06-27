@@ -96,7 +96,8 @@ $(function () {
         });
     });
 
-    $(".menu-button").click(function(){
+    $(".menu-button").click(function(e){
+        e.preventDefault()
         $(".mobile-menu").slideToggle();
         $(this).toggleClass('close');
     })
