@@ -3,15 +3,12 @@ autor: Karasik Vadim
 project: yitechnology
 */
 
-
 @import "import/_reset.less";
 @import "import/_fonts.less";
-
 @color-yi: #D91748;
 @dark-text: #5a5a5a;
 @light-text: #ffffff;
 @blue-text: #2CA6E7;
-
 body {
     font-size: 62.5%;
     font-family: "HelveticaNeueCyr-Roman", Arial, Helvetica, sans-serif;
@@ -93,8 +90,7 @@ header {
         text-decoration: none;
         background: @color-yi;
         border-radius: 3px;
-
-        &:hover{
+        &:hover {
             background: @color-yi - 15%;
         }
     }
@@ -395,26 +391,22 @@ footer {
     }
 }
 
-.yi-action-{
-    &banner{
+.yi-action- {
+    &banner {
         padding: 100px 0 70px;
         background: #F4F4F4;
         text-align: center;
-
-        h1{
+        h1 {
             color: @blue-text;
         }
-
-        img{
+        img {
             max-width: 100%;
         }
     }
-
     &video {
         padding: 100px 0;
         background: url("../img/hill-panorame.jpg") no-repeat center center;
         background-size: cover;
-
         h2,
         p {
             color: @light-text;
@@ -425,53 +417,44 @@ footer {
             height: 340px;
         }
     }
-
-    &angle{
+    &angle {
         padding: 70px 0;
         background: #F7F8FA;
-        h2{
-            color:@blue-text;
+        h2 {
+            color: @blue-text;
         }
-
-        img{
+        img {
             max-width: 100%;
         }
     }
-
-    &processor{
+    &processor {
         padding: 100px 0;
         background: url("../img/yi-plane.jpg") no-repeat center center;
-
-        h2,p{
+        h2,
+        p {
             color: @light-text;
         }
-
-        img{
+        img {
             max-width: 100%;
         }
     }
-
-    &companion{
+    &companion {
         padding: 70px 0;
-        img{
+        img {
             max-width: 30%;
         }
-        
     }
-
-    &app{
+    &app {
         padding: 100px 0 200px;
         background: url("../img/yi-camera-app-bg.jpg") no-repeat center center;
         background-size: cover;
-
-        h2,p{
+        h2,
+        p {
             color: #ffffff;
         }
-
         @media(max-width: 768px) {
             background: url("../img/yi-camera-app-bg.jpg") no-repeat center left;
         }
-
     }
 }
 
@@ -986,17 +969,49 @@ footer {
         }
         .example-text {
             padding: 70px 0 10px 50px;
+            @media(max-width: 768px) {
+                padding: 70px 0 10px 10px;
+            }
         }
     }
-    &promo{
-        margin: 0 -15px;
-        div{
-            padding: 0;
+    &promo {
+        padding: 70px 0;
+        background: url('../img/promo_bg.png') no-repeat center center;
+        background-size: cover;
+        h2,
+        p {
+            color: @light-text;
         }
-        img{
-            //width: 100%;
-            max-width: 100%;
-            margin-bottom: -3px;
+        .shop-logo {
+            display: inline-block;
+            margin-bottom: 20px;
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+        .promo-price {
+            display: inline-block;
+            width: 335px;
+            height: 250px;
+            background: url('../img/319842-P99Y9E-469.svg') no-repeat center center;
+            background-size: cover;
+            text-align: center;
+            @media(max-width: 768px) {
+                text-align: center;
+            }
+            span {
+                //position: absolute;
+                //top:30%;
+                //left: 30%;
+                font-family: "HelveticaNeueCyr-Medium";
+                font-size: 400%;
+                line-height: 5;
+                color: @dark-text;
+                @media(max-width: 768px) {
+                    top:30%;
+                    left: 30%;
+                }
+            }
         }
     }
 }
@@ -1036,149 +1051,147 @@ footer {
     }
 }
 
-.gallery{
-    .prew-img{
+.gallery {
+    .prew-img {
         max-width: 70px;
         margin: 10px 5px;
         display: inline-block;
         border: 1px solid #afafaf;
         cursor: pointer;
-
-        &:hover{
+        &:hover {
             border-width: 2px;
         }
     }
-
-    .large-img{
+    .large-img {
         display: block;
     }
 }
 
-.yi-shops-{
-    &banner{
+.yi-shops- {
+    &banner {
         padding: 120px 0;
         background: url('../img/shops-bg.jpg') no-repeat center center;
         background-size: cover;
-
-        h1,p{color: @light-text}
+        h1,
+        p {
+            color: @light-text
+        }
     }
-
-    &shops{
+    &shops {
         padding: 70px 0;
-
-        .shop-logo{
+        .shop-logo {
             display: inline-block;
             margin: 15px;
-
-            &:hover{
+            &:hover {
                 opacity: 0.8;
             }
         }
     }
+    &price {
+        table {
+            th {
+                font-weight: bold;
+            }
+            font-size: 160%;
+            @media(max-width: 768px){
+                font-size: 120%;
+            }
+        }
+        padding: 0 0 50px;
+    }
 }
 
-.yi-mount-{
-    &banner{
+.yi-mount- {
+    &banner {
         padding: 200px 0;
         background: url('../img/pet-mount-bg.jpg') no-repeat center center;
         background-size: cover;
-
-        @media(max-width: 768px){
+        @media(max-width: 768px) {
             padding: 150px 0;
-            background: url('../img/pet-mount-bg.jpg') no-repeat 45% center;    
+            background: url('../img/pet-mount-bg.jpg') no-repeat 45% center;
         }
-
-        h1,p{
+        h1,
+        p {
             color: @color-yi;
         }
     }
 }
 
-.yi-handmount-{
-    &info{
+.yi-handmount- {
+    &info {
         padding: 70px 0;
-
-        img{
+        img {
             max-width: 100%;
         }
     }
 }
 
-.yi-bikemount-{
-    &banner{
+.yi-bikemount- {
+    &banner {
         padding: 100px 0;
         background: url('../img/bile-mount-bg.jpg') no-repeat center center;
         background-size: cover;
-
-        h2,p{
+        h2,
+        p {
             color: @light-text;
         }
     }
-    &info{
+    &info {
         padding: 70px 0;
-        
-        img{
+        img {
             max-width: 100%;
         }
     }
-
-    
 }
 
-.yi-headmount-{
-    &banner{
+.yi-headmount- {
+    &banner {
         padding: 100px 0;
         background: url('../img/yi_helmet_mount_bg.jpg') no-repeat center center;
         background-size: cover;
-
-        h2,p{
+        h2,
+        p {
             color: @light-text;
         }
     }
-    &info{
+    &info {
         padding: 70px 0;
-
-        img{
+        img {
             max-width: 100%;
         }
     }
 }
 
-.yi-stick-{
-    &banner{
+.yi-stick- {
+    &banner {
         padding: 120px 0 200px;
         background: url('../img/yiselfiebanner.jpg') no-repeat center center;
         background-size: cover;
-
-        h1{
+        h1 {
             color: @color-yi;
         }
     }
-
-    &info{
+    &info {
         padding: 70px 0;
-        
-        img{
+        img {
             max-width: 100%;
         }
     }
 }
 
-.yi-floatgrip-{
-    &banner{
+.yi-floatgrip- {
+    &banner {
         padding: 100px 0;
         background: url("../img/flatgripbanner.jpg") no-repeat center center;
         background-size: cover;
-
-        h2,p{
+        h2,
+        p {
             color: @light-text;
         }
     }
-
-    &info{
+    &info {
         padding: 70px 0;
-
-        img{
+        img {
             max-width: 100%;
         }
     }
@@ -1210,10 +1223,6 @@ footer {
 .gold-bg {
     background: #d6cfc7;
     padding: 70px 0;
-}
-
-.promo{
-
 }
 
 //Extra small devices Phones (<768px)	
