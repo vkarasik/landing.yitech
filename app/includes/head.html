@@ -3,3 +3,45 @@
 <script src="<?php $_SERVER['DOCUMENT_ROOT']?>/js/jquery-3.2.1.min.js" defer></script>
 <script src="<?php $_SERVER['DOCUMENT_ROOT']?>/js/bootstrap.min.js" defer></script>
 <script src="<?php $_SERVER['DOCUMENT_ROOT']?>/js/script.js?29.06" defer></script>
+<!-- VK Pixel -->
+<script type="text/javascript">
+    ! function () {
+        var t = document.createElement("script");
+        t.type = "text/javascript", t.async = !0, t.src = "https://vk.com/js/api/openapi.js?158", t.onload = function () {
+            VK.Retargeting.Init("VK-RTRG-267902-4hs38"), VK.Retargeting.Hit()
+        }, document.head.appendChild(t)
+    }();
+</script>
+<noscript>
+    <img src="https://vk.com/rtrg?p=VK-RTRG-267902-4hs38" style="position:fixed; left:-999px;" alt="" />
+</noscript>
+<!-- end VK Pixel -->
+
+<!-- FB Pixel -->
+<script>
+    ! function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+            n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '205260080152111');
+    fbq('track', 'PageView');
+</script>
+<noscript>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=205260080152111&ev=PageView&noscript=1"
+    />
+</noscript>
+<!-- end FB Pixel -->
