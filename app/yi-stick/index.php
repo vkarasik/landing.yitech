@@ -7,7 +7,7 @@
         <meta http-equiv="Cache-control" content="no-cache">
 		<meta http-equiv="Pragma" content="no-cache">
         <meta http-equiv="Expires" content="-1">
-        <link rel="shortcut icon" href="favicon.ico">
+
         <title>Ручки для селфи YI</title>
         <?php include '../includes/head.html'; ?>
     </head>

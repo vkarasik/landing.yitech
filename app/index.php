@@ -7,7 +7,6 @@
         <meta http-equiv="Cache-control" content="no-cache">
 		<meta http-equiv="Pragma" content="no-cache">
         <meta http-equiv="Expires" content="-1">
-        <link rel="shortcut icon" href="favicon.ico">
         <title>Yi | Официальный дистрибьютор в Беларуси</title>
         <?php include 'includes/head.html'; ?>
     </head>
